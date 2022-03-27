@@ -56,17 +56,18 @@ elif ${2:[[ ${1:condition} ]]}; then
 	${0:${VISUAL}}
 endsnippet
 
-snippet for "for ... done (for)" b
+snippet for "for ... in ... done (for)" b
+for ${1:i}${2/.+/ in /}${2:words}; do
+	${0:${VISUAL}}
+done
+endsnippet
+
+snippet forct "for ... done (forct)" b
 for (( i = 0; i < ${1:10}; i++ )); do
 	${0:${VISUAL}}
 done
 endsnippet
 
-snippet forin "for ... in ... done (forin)" b
-for ${1:i}${2/.+/ in /}${2:words}; do
-	${0:${VISUAL}}
-done
-endsnippet
 
 snippet here "here document (here)"
 <<-${2:'${1:TOKEN}'}
